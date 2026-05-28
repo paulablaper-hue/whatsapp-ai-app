@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SaaS Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui;
+      background: #0b1220;
+      color: white;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 240px;
+      background: #0f172a;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .nav-item {
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #cbd5e1;
+    }
+
+    .nav-item:hover {
+      background: #1e293b;
+    }
+
+    /* MAIN */
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #3b82f6;
+      color: white;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+    }
+
+    .pro-badge {
+      background: #10b981;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      display: inline-block;
+    }
+
+    .free-badge {
+      background: #64748b;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">⚡ SaaS AI</div>
+
+    <div class="nav-item">Dashboard</div>
+    <div class="nav-item">Projects</div>
+    <div class="nav-item">Billing</div>
+    <div class="nav-item">Settings</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <h1>Dashboard</h1>
+
+    <div class="card">
+      <h3>Estado de cuenta</h3>
+      <p id="planStatus">Cargando...</p>
+    </div>
+
+    <div class="card">
+      <h3>Acciones</h3>
+
+      <input id="emailInput" placeholder="Email para login" />
+
+      <button class="btn" onclick="loginUser()">Login</button>
+      <button class="btn" onclick="buyPro()">Upgrade PRO</button>
+    </div>
+
+    <div class="card">
+      <h3>Zona PRO</h3>
+      <div id="proArea" style="display:none;">
+        <p class="pro-badge">PRO ACTIVO</p>
+        <p>Acceso completo al sistema</p>
+      </div>
+
+      <div id="freeArea">
+        <p class="free-badge">FREE</p>
+        <p>Funcionalidades limitadas</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+
+</body>
+</html>
